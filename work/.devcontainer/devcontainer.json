@@ -4,7 +4,7 @@
 	"name": "Kaggle",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "21c5b7b0e2c6",
-	"runArgs": ["--runtime=nvidia"]
+	"runArgs": ["--runtime=nvidia","--rm"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -13,7 +13,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "sh postCreateCommand.sh",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
