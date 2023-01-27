@@ -34,17 +34,7 @@ Flags:
 * `--gpu` to build an image for GPU.
 * `--use-cache` for faster iterative builds.
 
-## Testing a new image
 
-A suite of tests can be found under the `/tests` folder. You can run the test using this command:
-
-```sh
-./test
-```
-
-Flags:
-
-* `--gpu` to test the GPU image.
 
 ## Running the image
 
@@ -67,3 +57,12 @@ docker run --runtime nvidia --rm -it gcr.io/kaggle-gpu-images/python /bin/bash
 ```
 
 To ensure your container can access the GPU, follow the instructions posted [here](https://github.com/Kaggle/docker-python/issues/361#issuecomment-448093930).
+
+## Running the image with VSCode
+
+1. Install Dev Containers, which is a VSCode extention.
+1. Make directory like /work/ directory in this repository.
+1. Make directory and .devcontainer.json like /work/.devcontainer/ in this repository.
+1. Copy .devcontainer.json in this repository to your local. And modify the image id in the .devcontainer.json to the image id of your docker image. You can see the image id of your docker image with a command "docker images"
+1. [File] -> [Open Folder...] to open your work directory.
+1. [F1] -> [Dev Containers: Reopen in Container] to open a container from your docker image.
